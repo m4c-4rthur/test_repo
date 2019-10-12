@@ -69,3 +69,12 @@ Rotate an array to the right by a given number of steps.
     	return A;
     	
     }
+   
+      /**
+
+FrogJmp
+Count minimal number of jumps from position X to Y
+**/
+    public int solution(int X, int Y, int D) {
+        return (int) Math.ceil((double)(Y-X)/D) ;
+    }
