@@ -94,3 +94,28 @@ Find the missing element in a given permutation.
         
         return temp;
     }
+    
+    1. MissingInteger
+        Find the smallest positive integer that does not occur in a given sequence
+    
+     public int solution(int[] A) {
+     Arrays.sort(A);
+        int max = 0;
+        boolean found =false;
+        if(A[0] > 1)
+            return 1;
+        for(int i=0 ;i<A.length;i++) {
+            if(A[i] == 1)
+                found = true;
+            if(i == A.length-1) {
+                max = A[i];
+                break;
+            }
+            if(A[i] < 0)
+                continue;
+            if(A[i]+1 != A[i+1] && A[i] != A[i+1])
+                return A[i]+1;
+        }
+        
+        return found ? max > 0 ? max+1 : 1 : 1; 
+    }
